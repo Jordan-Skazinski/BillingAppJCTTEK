@@ -2,31 +2,7 @@ import React from "react";
 import "./App.css";
 
 
-let permission = Notification.permission;
-if(permission === "granted") {
-   showNotification();
-} else if(permission === "default"){
-   requestAndShowPermission();
-} else {
-  alert("Use normal alert");
-}
-function showNotification() {
-   
-   var title = "Bill due";
-   var body = "Bill due date comeing up!";
-   var notification = new Notification(title, { body });
-   notification.onclick = () => { 
-          notification.close();
-          window.parent.focus();
-   }
-}
-function requestAndShowPermission() {
-   Notification.requestPermission(function (permission) {
-      if (permission === "granted") {
-            showNotification();
-      }
-   });
-}
+
 
 
 function LogIn({setUserNumber, setLogInState}) {
@@ -35,13 +11,7 @@ return(
       
       
       
-      <button 
-      onClick={() => {
-        
-        showNotification()
-        console.log("working")
-      }}
-      className=" bg-red-500 text-white hover:bg-green-500">test</button>
+      
       
       
       

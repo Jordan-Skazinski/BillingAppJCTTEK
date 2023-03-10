@@ -1,7 +1,7 @@
 
 import React from "react";
   function PostRecipteData({recipes, deleteRecipe}){
-    return recipes.map(({name, amount, dueDate, notes, preparation}, index) => { 
+    return recipes.map(({name, amount, dueDate, notes}, index) => { 
        return(
         {
         name:{name},
@@ -15,7 +15,7 @@ import React from "react";
   //takes in the recipe information from App.js and the deleteRecipe function in App.js
   function PostRecipe({recipes, deleteRecipe}) {
     //useing map to make the rows, takeing in deconstructed name, cuisine type, photo html, ingredients, and instructions from the recipeData array, or anyy other array
-    return recipes.map(({name, amount, dueDate, notes, preparation}, index) => {
+    return recipes.map(({name, amount, dueDate, notes}, index) => {
        return ( 
         <tr key={index}
         //creating an index so that we can referance it later for deletRecipe, also because react likes haveing unique indexs

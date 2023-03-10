@@ -4,8 +4,35 @@ import RecipeCreate from "./RecipeCreate";
 import RecipeList from "./RecipeList";
 import RecipeData from "./RecipeData"
 import LogIn from "./LogIn.js"
+import { today } from "./date-time";
 
+let date = today()
 
+let permission = Notification.permission;
+if(permission === "granted") {
+   showNotification();
+} else if(permission === "default"){
+   requestAndShowPermission();
+} else {
+  alert("Use normal alert");
+}
+function showNotification() {
+   
+   var title = "Bill due";
+   var body = date;
+   var notification = new Notification(title, { body });
+   notification.onclick = () => { 
+          notification.close();
+          window.parent.focus();
+   }
+}
+function requestAndShowPermission() {
+   Notification.requestPermission(function (permission) {
+      if (permission === "granted") {
+            showNotification();
+      }
+   });
+}
 
 
 
@@ -33,7 +60,7 @@ function App() {
     
     <>
     <main>
-    {logInState === "0" ? (
+    {logInState === "1" ? (
       <LogIn setUserNumber={setUserNumber} setLogInState={setLogInState} />
       )
       :
@@ -41,6 +68,15 @@ function App() {
         
         <div className="App">
       <header><h1>Bills</h1></header>
+
+      <button 
+      onClick={() => {
+        
+        showNotification()
+
+      }}
+      className=" my-3 bg-red-500 text-white hover:bg-green-500">test</button>
+
       <RecipeList
      
       /*This is where we send the Array that we created in RecipeCreate, or after deleting a recipe with deleteRecipe,
