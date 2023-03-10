@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display+SC');
+
+.App {
+  padding: 1em;
+}
+h1{
+  font-family: 'Playfair Display SC';
+  text-align: center;
+  font-size: 64px;
+}
+label {
+  display: inline-block;
+  width: 100px;
+
+}
+
+header {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* typography */
+
+html {
+  font-family: 'helvetica neue', sans-serif;
+}
+
+thead th, tfoot th {
+  font-family: 'Rock Salt';
+}
+
+th {
+  letter-spacing: 2px;
+  padding: 10px;
+}
+
+td {
+  letter-spacing: 1px;
+  overflow-x:visible;
+  overflow-y:visible;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+}
+
+.scale-down {
+  object-fit: scale-down;
+}
+
+/* table */
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  overflow:hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content_td p {
+  max-width: 100%;
+  max-height: 100px;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+}
+
+thead th:nth-child(1){
+  width:20%;
+}
+thead th:nth-child(2){
+  width:20%;
+}
+thead th:nth-child(3){
+  width:20%;
+}
+thead th:nth-child(4){
+  width:20%;
+}
+thead th:nth-child(5){
+  width:20%;
+}
+
+tbody tr:nth-child(odd){
+  background-color: #dadada ;
+}
+form input{
+  margin-left: 20% ;
+  width: 70%;
+  height: 40px;
+  text-align: center;
+}
+form textarea{
+  margin-left: 20% ;
+  width: 70%;
+  height: 80px;
+  text-align: center;
+}
+
+/*
+thead th:first-child,
+thead th:nth-child(2),
+thead th:nth-child(3),
+thead th:nth-child(6) {
+  width: 10%;
+  
+}
+thead th:nth-child(4),
+thead th:nth-child(5) {
+  width: 10%;
+  
+}
+
+tbody td:first-child,
+tbody td:nth-child(2),
+tbody td:nth-child(3),
+tbody td:nth-child(6){
+  width: 10%;
+}
+tbody td:nth-child(4),
+tbody td:nth-child(5){
+  width: 30%;
+  
+}
+tbody td:nth-child(4){
+  background: red ;
+}*/
+
+
+
+
+
+@media 
+only screen and (max-width: 800px)  {
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+  body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+
+  }
+
+  tbody tr:nth-child(odd){
+    background-color: #242424 ;
+  }
+
+
+	thead tr { 
+		display: none;
+	}
+	
+ 
+  tbody td:first-child,
+  tbody td:nth-child(2),
+  tbody td:nth-child(3),
+  tbody td:nth-child(6){
+    width: 100%
+  }
+
+  tbody td:nth-child(4),
+  tbody td:nth-child(5){
+    width: 100%
+  }  
+
+}
+
+
