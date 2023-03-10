@@ -7,7 +7,13 @@ import LogIn from "./LogIn.js"
 import { today } from "./date-time";
 
 let date = today()
+//let date_1 = new Date(2023-)
+let date_1 = new Date(RecipeData[0][1].dueDate)
+let date_2 = new Date(date)
+let difference = date_1 - date_2;
+console.log(difference);
 
+/*
 let permission = Notification.permission;
 if(permission === "granted") {
    showNotification();
@@ -15,17 +21,59 @@ if(permission === "granted") {
    requestAndShowPermission();
 } else {
   alert("Use normal alert");
-}
+}*/
+  let title = "Bill due";
+  let body = `Todays date is ${date} 
+  Bill's due date is ${RecipeData[0][0].dueDate}`;
+
 function showNotification() {
    
-   var title = "Bill due";
-   var body = date;
-   var notification = new Notification(title, { body });
-   notification.onclick = () => { 
-          notification.close();
-          window.parent.focus();
-   }
+  var notification = new Notification(title, { body });
+  notification.onclick = () => { 
+         notification.close();
+         window.parent.focus();
+  }
+
 }
+function checkForUpcomeingDueDates(){
+  
+  //7948800000
+  //2649600000
+  //2678400000
+  
+for(let i = 0; i < RecipeData[0].length; i++) {
+  let date_1 = new Date(RecipeData[0][i].dueDate)
+  let date_2 = new Date(date)
+  let difference = date_1 - date_2;
+
+
+  if(RecipeData[0][i].dueDate === date){
+    title = "Bill due Today!"
+    body = `Todays date is ${date} 
+    Bill's due date is ${RecipeData[0][i].dueDate}`;
+  showNotification()
+  } else if(difference === 259200000){
+  title = "Bill due in three days!";
+   body = `Todays date is ${date} 
+    Bill's due date is ${RecipeData[0][i].dueDate}`;
+  showNotification()
+} else if(difference === 86400000){
+  title = "Bill due tomorrow!";
+   body = `Todays date is ${date} 
+    Bill's due date is ${RecipeData[0][i].dueDate}`;
+  showNotification()
+}
+}
+if(false){
+  
+}
+if(true){}
+if(true){}
+
+}
+
+checkForUpcomeingDueDates()
+/*
 function requestAndShowPermission() {
    Notification.requestPermission(function (permission) {
       if (permission === "granted") {
@@ -33,8 +81,7 @@ function requestAndShowPermission() {
       }
    });
 }
-
-
+*/
 
 function App() {
   /*
