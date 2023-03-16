@@ -7,19 +7,19 @@ const RecipeData =
   {
     name: "Rent",
     amount: "1500",
-    dueDate: "2023-03-10",
+    dueDate: "2023-03-16",
     notes: "This is an example."
   },
     {
     name: "Loan A",
     amount: "500",
-    dueDate: "2023-03-11",
+    dueDate: "2023-03-17",
     notes: "This is  an example."
     },
     {
       name: "something else",
       amount: "1200",
-      dueDate: "2023-03-13",
+      dueDate: "2023-03-19",
       notes: "This is an example."
     },
 ],

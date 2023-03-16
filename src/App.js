@@ -4,14 +4,16 @@ import RecipeCreate from "./RecipeCreate";
 import RecipeList from "./RecipeList";
 import RecipeData from "./RecipeData"
 import LogIn from "./LogIn.js"
+//import Register from "./Register.js"
+//import PasswordReset from "./PasswordReset.js"
 import { today } from "./date-time";
 
 let date = today()
-//let date_1 = new Date(2023-)
-let date_1 = new Date(RecipeData[0][1].dueDate)
-let date_2 = new Date(date)
-let difference = date_1 - date_2;
-console.log(difference);
+// //let date_1 = new Date(2023-)
+// let date_1 = new Date(RecipeData[0][1].dueDate)
+// let date_2 = new Date(date)
+// let difference = date_1 - date_2;
+// console.log(difference);
 
 /*
 let permission = Notification.permission;
