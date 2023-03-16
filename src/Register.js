@@ -11,6 +11,24 @@ return(
       
       
       
+      <label className="w-1/2" htmlFor="FirstName">First Name</label>
+      <input
+        className="mb-5 rounded"
+        type="text"
+        name="FirstName"
+        id="FirstName"
+        placeholder="FirstName"
+        //onChange={(e) => setUserNumber(e.target.value)}
+      ></input>
+      <label className="w-1/2" htmlFor="LastName">Last Name</label>
+      <input
+        className="mb-5 rounded"
+        type="text"
+        name="LastName"
+        id="LastName"
+        placeholder="LastName"
+        //onChange={(e) => setUserNumber(e.target.value)}
+      ></input>
       <label className="w-1/2" htmlFor="Email">Email</label>
       <input
         className="mb-5 rounded"
@@ -29,13 +47,21 @@ return(
         placeholder="Password"
         //onChange={() => setUserPassword(e.target.value)}
       ></input>
-      <label className="w-1/2 " htmlFor="Password">Same Password</label>
+      <label className="w-1/2 " htmlFor="Username">Username</label>
       <input
         className="mb-5 rounded"
         type="text"
-        name="Password"
-        id="Password"
-        placeholder="Password"
+        name="Username"
+        id="Username"
+        placeholder="Username"
+        //onChange={() => setUserPassword(e.target.value)}
+      ></input>
+      <input
+        className="mb-5 rounded"
+        type="text"
+        name="Username"
+        id="Username"
+        placeholder="Username"
         //onChange={() => setUserPassword(e.target.value)}
       ></input>
       <button
