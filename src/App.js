@@ -37,43 +37,37 @@ function showNotification() {
 }
 function checkForUpcomeingDueDates(){
   
-  //7948800000
-  //2649600000
-  //2678400000
-  
 for(let i = 0; i < RecipeData[0].length; i++) {
   let date_1 = new Date(RecipeData[0][i].dueDate)
   let date_2 = new Date(date)
   let difference = date_1 - date_2;
-
-
   if(RecipeData[0][i].dueDate === date){
     title = "Bill due Today!"
     body = `Todays date is ${date} 
+    Bill: ${RecipeData[0][i].name}
     Bill's due date is ${RecipeData[0][i].dueDate}`;
   showNotification()
   } else if(difference === 259200000){
   title = "Bill due in three days!";
    body = `Todays date is ${date} 
+   Bill: ${RecipeData[0][i].name}
     Bill's due date is ${RecipeData[0][i].dueDate}`;
   showNotification()
 } else if(difference === 86400000){
   title = "Bill due tomorrow!";
    body = `Todays date is ${date} 
+   Bill: ${RecipeData[0][i].name}
     Bill's due date is ${RecipeData[0][i].dueDate}`;
   showNotification()
 }
 }
-if(false){
-  
-}
-if(true){}
-if(true){}
+
 
 }
-
+//notifications, anoying
 checkForUpcomeingDueDates()
-/*
+
+/* not being used atm
 function requestAndShowPermission() {
    Notification.requestPermission(function (permission) {
       if (permission === "granted") {
@@ -107,7 +101,7 @@ function App() {
     
     <>
     <main>
-    {logInState === "1" ? (
+    {logInState === "0" ? (
       <LogIn setUserNumber={setUserNumber} setLogInState={setLogInState} />
       )
       :
@@ -119,7 +113,7 @@ function App() {
       <button 
       onClick={() => {
         
-        showNotification()
+        checkForUpcomeingDueDates()
 
       }}
       className=" my-3 bg-red-500 text-white hover:bg-green-500">test</button>

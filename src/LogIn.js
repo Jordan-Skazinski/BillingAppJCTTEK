@@ -7,26 +7,25 @@ import "./App.css";
 
 function LogIn({setUserNumber, setLogInState}) {
 return(
-    <div className="flex flex-col justify-center m-4 mt-40 p-5 xl:w-1/4 xl:mx-auto bg-white rounded shadow">
+    <div className="flex flex-col justify-center m-4 mt-40 p-5 xl:w-1/4 xl:mx-auto bg-blue-900 text-white rounded shadow">
       
       
       
       
       
       
-      
-      <label className="w-1/2" htmlFor="Username">Enter Username</label>
+      <label className="w-1/2" htmlFor="Email">Email</label>
       <input
-        className="mb-5"
+        className="mb-5 rounded"
         type="text"
-        name="Username"
-        id="Username"
-        placeholder="Username"
+        name="Email"
+        id="Email"
+        placeholder="Email"
         onChange={(e) => setUserNumber(e.target.value)}
       ></input>
-      <label className="w-1/2" htmlFor="Password">Enter Password</label>
+      <label className="w-1/2 " htmlFor="Password">Password</label>
       <input
-        className="mb-5"
+        className="mb-5 rounded"
         type="text"
         name="Password"
         id="Password"
@@ -52,6 +51,33 @@ return(
       >
         Log In
       </button>
+      <div className="columns-2">
+      <button
+        onClick={() => setLogInState("2")}
+        className="
+      mt-5
+      text-white  
+      hover:bg-transparent 
+      hover:text-blue-500 
+      transition-all 
+      duration-300"
+      >
+        Register
+      </button>
+      <button
+        onClick={() => setLogInState("3")}
+        className="
+      ml-5
+      mt-5
+      text-white  
+      hover:bg-transparent 
+      hover:text-blue-500 
+      transition-all 
+      duration-300"
+      >
+        Reset Password
+      </button>
+      </div>
     </div>
 )
 }
